@@ -7,7 +7,7 @@ public class Aluno {/*esta é a classe que representa aluno*/
 	public String nome;
 	public int idade;
 	public String dataNascimento;
-	String rg;
+	public String rg;
 	String cpf;
 	String nomeMae;
 	String nomePai;

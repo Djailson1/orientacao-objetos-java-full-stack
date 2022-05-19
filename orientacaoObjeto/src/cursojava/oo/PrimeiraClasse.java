@@ -4,7 +4,7 @@ import cursojava.classes.Aluno;
 
 public class PrimeiraClasse {
 	public static void main(String[] args) {
-		/*quando instânciado passa a existir na memória java
+		/*qu ando instânciado passa a existir na memória java
 		 */
 		
 		/*new Aluno() é uma instância(criação de Objeto)*/
