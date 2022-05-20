@@ -6,7 +6,7 @@ import cursojava.classes.Aluno;
 
 public class PrimeiraClasse {
 	public static void main(String[] args) {
-		/*qu ando instânciado passa a existir na memória java
+		/*quando instânciado passa a existir na memória java
 		 */
 		
 		/*new Aluno() é uma instância(criação de Objeto)*/
@@ -46,7 +46,7 @@ public class PrimeiraClasse {
 		aluno1.setSerieMatriculado(serie);
 		aluno1.setNomeEscola(escola);
 		/*passando as notas para média*/
-		aluno1.setNota1(Double.parseDouble(nota1));
+	    aluno1.setNota1(Double.parseDouble(nota1));
 		aluno1.setNota2(Double.parseDouble(nota2));
 		aluno1.setNota3(Double.parseDouble(nota3));
 		aluno1.setNota4(Double.parseDouble(nota4));
@@ -54,7 +54,7 @@ public class PrimeiraClasse {
 		
 
 		/*get retorna os dados - imprime*/
-		System.out.println("Nome é = " + aluno1.getNome());
+		/*System.out.println("Nome é = " + aluno1.getNome());
 		System.out.println("Idade = " + aluno1.getIdade());
 		System.out.println("Nascimento = " + aluno1.getDataNascimento());
 		System.out.println("Registro Geral = " + aluno1.getRg());
@@ -63,12 +63,18 @@ public class PrimeiraClasse {
 		System.out.println("Nome da mãe =  " + aluno1.getNomeMae());
 		System.out.println("Número da matricula =  " + aluno1.getDataMatricula());
 		System.out.println("Série matriculado =  " + aluno1.getSerieMatriculado());
-		System.out.println("Nome da escola =  " + aluno1.getNomeEscola());
+		System.out.println("Nome da escola =  " + aluno1.getNomeEscola());*/
 		
 		/*chamando métodos e imprimindo na tela*/
-		System.out.println("Média = " + aluno1.getMediaNota());/*chamando o metodo média para retornar os valores*/
-		System.out.println("Resultado = " + (aluno1.getAlunoAprovado()? "Aprovado" : "Reprovado"));/*atribuind o resultado true a aprovado com op.ternário*/
-		System.out.println("Resultado = " + aluno1.getAlunoAprovado2());/*imprimndo a aprovação em texto tipo string direto*/
+		/*System.out.println("Média = " + aluno1.getMediaNota());/*chamando o metodo média para retornar os valores*/
+		/*System.out.println("Resultado = " + (aluno1.getAlunoAprovado()? "Aprovado" : "Reprovado"));/*atribuind o resultado true a aprovado com op.ternário*/
+		/*System.out.println("Resultado = " + aluno1.getAlunoAprovado2());   /*imprimndo a aprovação em texto tipo string direto*/
+		
+		
+		System.out.println(aluno1.toString());/*descrição do objeto na memória*/
+		System.out.println("Média do aluno = " + aluno1.getMediaNota());
+		System.out.println("Resultado = " + aluno1.getAlunoAprovado2());
+		
 		
 		System.out.println("=============================================================");
 		

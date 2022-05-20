@@ -182,6 +182,15 @@ public class Aluno {/*esta é a classe que representa aluno*/
 			return "O aluno está Reprovado.";
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", rg=" + rg
+				+ ", cpf=" + cpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", dataMatricula=" + dataMatricula
+				+ ", nomeEscola=" + nomeEscola + ", serieMatriculado=" + serieMatriculado + ", nota1=" + nota1
+				+ ", nota2=" + nota2 + ", nota3=" + nota3 + ", nota4=" + nota4 + "]";
+	}
+	
 	
 	
 
