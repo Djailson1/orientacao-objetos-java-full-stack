@@ -14,6 +14,11 @@ public class Aluno {/*esta é a classe que representa aluno*/
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
+	
+	private double nota1;
+	private double nota2;
+	private double nota3;
+	private double nota4;
 	/*para ser objeto tem que ser usado em outro local no main por exemplo*/
 
 
@@ -21,6 +26,38 @@ public class Aluno {/*esta é a classe que representa aluno*/
 	/*parte 2*/
 	/*construtores(comportamentos - métodos - ações )*/
 	
+	public double getNota1() {
+		return nota1;
+	}
+
+	public void setNota1(double nota1) {
+		this.nota1 = nota1;
+	}
+
+	public double getNota2() {
+		return nota2;
+	}
+
+	public void setNota2(double nota2) {
+		this.nota2 = nota2;
+	}
+
+	public double getNota3() {
+		return nota3;
+	}
+
+	public void setNota3(double nota3) {
+		this.nota3 = nota3;
+	}
+
+	public double getNota4() {
+		return nota4;
+	}
+
+	public void setNota4(double nota4) {
+		this.nota4 = nota4;
+	}
+
 	public Aluno() {/*construtor padrão java - cria os dados na memória*/
 		/*também se ele não for chamado o java irá escrever por trás porque ele é padrão*/
 	}
@@ -116,6 +153,34 @@ public class Aluno {/*esta é a classe que representa aluno*/
 
 	public void setSerieMatriculado(String serieMatriculado) {
 		this.serieMatriculado = serieMatriculado;
+	}
+	
+	public double getMediaNota() {/*retorna média do aluno*/
+		
+		return (nota1 + nota2 + nota3 + nota4) / 4;
+		
+	}
+	
+	/*método que retorna true para aprovado false para reprovado - com reutilização de método */
+	public boolean getAlunoAprovado() {
+		
+		double media = this.getMediaNota();
+		
+		if(media >= 70) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	/*método que retorna aprovação em String direto*/
+	public String getAlunoAprovado2() {
+		double media = this.getMediaNota();
+		
+		if(media >= 70) {
+			return "O aluno está Aprovado!";
+		}else {
+			return "O aluno está Reprovado.";
+		}
 	}
 	
 	
