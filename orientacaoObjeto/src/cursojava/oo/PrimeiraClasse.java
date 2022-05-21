@@ -14,42 +14,42 @@ public class PrimeiraClasse {
 		/*é obrigatório instânciar*/
 		
 		/*aula sobre entrada de dados*/
-		String nome = JOptionPane.showInputDialog("Qual é o seu nome?");
+		/*String nome = JOptionPane.showInputDialog("Qual é o seu nome?");
 		String idade = JOptionPane.showInputDialog("Qual é sua idade?");
 		String dataNascimento = JOptionPane.showInputDialog("Data de nascimento?");
 		String rg = JOptionPane.showInputDialog("Registro Geral?");
 		String cpf = JOptionPane.showInputDialog("Qual é o cpf?");
 		String nomeMae = JOptionPane.showInputDialog("Qual é o nome da mãe?");
 		String nomePai = JOptionPane.showInputDialog("Qual é o nome do pai?");
-		String matricula = JOptionPane.showInputDialog("DAta de matrícula?");
+		String matricula = JOptionPane.showInputDialog("Data de matrícula?");
 		String serie = JOptionPane.showInputDialog("Qual é a série?");
 		String escola = JOptionPane.showInputDialog("Qual é a escola?");
 		String nota1 = JOptionPane.showInputDialog("Qual foi a nota 1?");
 		String nota2 = JOptionPane.showInputDialog("Qual foi a nota 2?");
 		String nota3 = JOptionPane.showInputDialog("Qual foi a nota 3?");
-		String nota4 = JOptionPane.showInputDialog("Qual foi a nota 4?");
+		String nota4 = JOptionPane.showInputDialog("Qual foi a nota 4?");*/
 		
 		
 		
-		Aluno aluno1 = new Aluno();/*aqui pode ser João*/
+		/*Aluno aluno1 = new Aluno();/*aqui pode ser João*/
 		/*por padrão os atributos de java são privados(private) tem que colocar public lá*/
 	/*classe /variável /ch const. / do tipo de class*/
-		aluno1.setNome(nome);
+		/*aluno1.setNome(nome);*/
 		/*set passa os dados*/
-		aluno1.setIdade(Integer.valueOf(idade));/*convertendo string em int*/
-		aluno1.setDataNascimento(dataNascimento);
+		/*aluno1.setIdade(Integer.valueOf(idade));/*convertendo string em int*/
+		/*aluno1.setDataNascimento(dataNascimento);
 		aluno1.setRg(rg);
 		aluno1.setCpf(cpf);
 		aluno1.setNomeMae(nomeMae);
 		aluno1.setNomePai(nomePai);
 		aluno1.setDataMatricula(matricula);
 		aluno1.setSerieMatriculado(serie);
-		aluno1.setNomeEscola(escola);
+		aluno1.setNomeEscola(escola);*/
 		/*passando as notas para média*/
-	    aluno1.setNota1(Double.parseDouble(nota1));
+	    /*aluno1.setNota1(Double.parseDouble(nota1));
 		aluno1.setNota2(Double.parseDouble(nota2));
 		aluno1.setNota3(Double.parseDouble(nota3));
-		aluno1.setNota4(Double.parseDouble(nota4));
+		aluno1.setNota4(Double.parseDouble(nota4));*/
 		
 		
 
@@ -71,16 +71,31 @@ public class PrimeiraClasse {
 		/*System.out.println("Resultado = " + aluno1.getAlunoAprovado2());   /*imprimndo a aprovação em texto tipo string direto*/
 		
 		
-		System.out.println(aluno1.toString());/*descrição do objeto na memória*/
-		System.out.println("Média do aluno = " + aluno1.getMediaNota());
-		System.out.println("Resultado = " + aluno1.getAlunoAprovado2());
+		/*System.out.println(aluno1.toString());/*descrição do objeto na memória - tostring*/
+		/*System.out.println("Média do aluno = " + aluno1.getMediaNota());
+		System.out.println("Resultado = " + aluno1.getAlunoAprovado2());*/
 		
+		/*Equals e hashcode (diferenciar e comparar objetos)*/
+		
+		Aluno aluno1 = new Aluno();
+		aluno1.setNome("Alex");
+		aluno1.setCpf("782673");
+		
+		Aluno aluno2 = new Aluno();
+		aluno2.setNome("Alex");
+		aluno2.setCpf("7826723");
+		
+		if(aluno1.equals(aluno2)) {
+			System.out.println("Alunos são iguais");
+		}else {
+			System.out.println("Alunos são diferentes");
+		}
 		
 		System.out.println("=============================================================");
 		
        
-		Aluno aluno2 = new Aluno(); /*aqui Maria*/
-		aluno2.setNome("Maria");
+		/*Aluno aluno2 = new Aluno(); /*aqui Maria*/
+		/*aluno2.setNome("Maria");
 		aluno2.setIdade(48);
 		aluno2.setDataNascimento("18/05/1987");
 		aluno2.setRg("635656566");
@@ -89,20 +104,20 @@ public class PrimeiraClasse {
 		aluno2.setNomePai("Curtis Jackson");
 		aluno2.setDataMatricula("12/02/2022");
 		aluno2.setSerieMatriculado("7");
-		aluno2.setNomeEscola("Escola JDev Java");
+		aluno2.setNomeEscola("Escola JDev Java");*/
 		
-		System.out.println("Nome é = " + aluno2.getNome());
+		/*System.out.println("Nome é = " + aluno2.getNome());
 		/*get retorna os dados*/
-		System.out.println("Idade = " + aluno2.getIdade());
+		/*System.out.println("Idade = " + aluno2.getIdade());
 		System.out.println("Nascimento = " + aluno2.getDataNascimento());
 		
 		  /*=========================================================================*/
 		
-		Aluno aluno3 = new Aluno();/*aqui Djailson*/
+		/*Aluno aluno3 = new Aluno();/*aqui Djailson*/
 		
-		Aluno aluno4 = new Aluno("Bruno");/*parâmetro string foi passado no construtor*/
+		/*Aluno aluno4 = new Aluno("Bruno");/*parâmetro string foi passado no construtor*/
 		
-		Aluno aluno5 = new Aluno("Jennifer",24);/*2 parâmetros foram passados no contrutor na classe principal main*/
+		/*Aluno aluno5 = new Aluno("Jennifer",24);/*2 parâmetros foram passados no contrutor na classe principal main*/
 
 		/*Passou a ser objeto depois que foi instânciado 
 		 (instância é como se fosse o tipo das variáveis no caso o tipo da classe)*/

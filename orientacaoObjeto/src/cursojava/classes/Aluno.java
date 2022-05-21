@@ -1,5 +1,7 @@
 package cursojava.classes;
 
+import java.util.Objects;
+
 public class Aluno {/*esta é a classe que representa aluno*/
 	/*Caracteristicas gerais - atributos e tipos*/
 	
@@ -16,9 +18,16 @@ public class Aluno {/*esta é a classe que representa aluno*/
 	private String serieMatriculado;
 	
 	private double nota1;
+	private String disciplina1;
 	private double nota2;
+	private String disciplina2;
 	private double nota3;
+	private String disciplina3;
 	private double nota4;
+	private String disciplina4;
+	
+	
+	
 	/*para ser objeto tem que ser usado em outro local no main por exemplo*/
 
 
@@ -26,6 +35,38 @@ public class Aluno {/*esta é a classe que representa aluno*/
 	/*parte 2*/
 	/*construtores(comportamentos - métodos - ações )*/
 	
+	public String getDisciplina1() {
+		return disciplina1;
+	}
+
+	public void setDisciplina1(String disciplina1) {
+		this.disciplina1 = disciplina1;
+	}
+
+	public String getDisciplina2() {
+		return disciplina2;
+	}
+
+	public void setDisciplina2(String disciplina2) {
+		this.disciplina2 = disciplina2;
+	}
+
+	public String getDisciplina3() {
+		return disciplina3;
+	}
+
+	public void setDisciplina3(String disciplina3) {
+		this.disciplina3 = disciplina3;
+	}
+
+	public String getDisciplina4() {
+		return disciplina4;
+	}
+
+	public void setDisciplina4(String disciplina4) {
+		this.disciplina4 = disciplina4;
+	}
+
 	public double getNota1() {
 		return nota1;
 	}
@@ -184,11 +225,29 @@ public class Aluno {/*esta é a classe que representa aluno*/
 	}
 
 	@Override
-	public String toString() {
+	public String toString() {//criando toString
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", rg=" + rg
 				+ ", cpf=" + cpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", dataMatricula=" + dataMatricula
 				+ ", nomeEscola=" + nomeEscola + ", serieMatriculado=" + serieMatriculado + ", nota1=" + nota1
 				+ ", nota2=" + nota2 + ", nota3=" + nota3 + ", nota4=" + nota4 + "]";
+	}
+/*equals e hashcode*/
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(cpf, nome);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		return Objects.equals(cpf, other.cpf) && Objects.equals(nome, other.nome);
 	}
 	
 	
