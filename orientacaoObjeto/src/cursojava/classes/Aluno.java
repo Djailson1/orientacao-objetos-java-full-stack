@@ -224,15 +224,19 @@ public class Aluno {/*esta é a classe que representa aluno*/
 		}
 	}
 
+	
+
+	/*toString*/
 	@Override
-	public String toString() {//criando toString
+	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", rg=" + rg
 				+ ", cpf=" + cpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", dataMatricula=" + dataMatricula
 				+ ", nomeEscola=" + nomeEscola + ", serieMatriculado=" + serieMatriculado + ", nota1=" + nota1
-				+ ", nota2=" + nota2 + ", nota3=" + nota3 + ", nota4=" + nota4 + "]";
+				+ ", disciplina1=" + disciplina1 + ", nota2=" + nota2 + ", disciplina2=" + disciplina2 + ", nota3="
+				+ nota3 + ", disciplina3=" + disciplina3 + ", nota4=" + nota4 + ", disciplina4=" + disciplina4 + "]";
 	}
-/*equals e hashcode*/
 
+	/*equals e hashcode*/
 	@Override
 	public int hashCode() {
 		return Objects.hash(cpf, nome);
