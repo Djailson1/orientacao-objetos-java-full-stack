@@ -27,10 +27,12 @@ public class PrimeiraClasse {
 		String escola = JOptionPane.showInputDialog("Qual é a escola?");
 	
 		
-		Aluno aluno1 = new Aluno();/*aqui pode ser João*/
 		/*por padrão os atributos de java são privados(private) tem que colocar public lá*/
 	/*classe /variável /ch const. / do tipo de class*/
 		/*set passa os dados*/
+		
+		Aluno aluno1 = new Aluno();/*aqui pode ser João*/
+
 		aluno1.setNome(nome);
 		aluno1.setIdade(Integer.valueOf(idade));/*convertendo string em int*/
 		aluno1.setDataNascimento(dataNascimento);
@@ -53,6 +55,16 @@ public class PrimeiraClasse {
 			aluno1.getDisciplinas().add(disciplina);
 			
 		}
+		
+		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina ?");
+		
+		if(escolha == 0) {
+			String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina que deseja remover 1, 2, 3 ou 4 ? ");
+			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() -1);
+			
+			
+		}
+		
 		
 		System.out.println(aluno1.toString());/*descrição do objeto na memória - tostring*/
 		System.out.println("Média do aluno = " + aluno1.getMediaNota());
