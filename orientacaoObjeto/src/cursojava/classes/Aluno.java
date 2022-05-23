@@ -1,11 +1,13 @@
 package cursojava.classes;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-public class Aluno {/*esta é a classe que representa aluno*/
-	/*Caracteristicas gerais - atributos e tipos*/
-	
-	/*atributos do aluno*/
+public class Aluno {/* esta é a classe que representa aluno */
+	/* Caracteristicas gerais - atributos e tipos */
+
+	/* atributos do aluno */
 	private String nome;
 	private int idade;
 	private String dataNascimento;
@@ -16,52 +18,52 @@ public class Aluno {/*esta é a classe que representa aluno*/
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
-	
-	private Disciplina disciplina = new Disciplina();
-	
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
-	}
-	
-	public Disciplina getDisciplina() {
-		return disciplina;
-	}
-	
-	
-	
-	
-	
-	/*para ser objeto tem que ser usado em outro local no main por exemplo*/
 
-
-
-	/*parte 2*/
-	/*construtores(comportamentos - métodos - ações )*/
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
-	
-	public Aluno() {/*construtor padrão java - cria os dados na memória*/
-		/*também se ele não for chamado o java irá escrever por trás porque ele é padrão*/
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
 	}
-	
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
+
+	/* para ser objeto tem que ser usado em outro local no main por exemplo */
+
+	/* parte 2 */
+	/* construtores(comportamentos - métodos - ações ) */
+
+	public Aluno() {/* construtor padrão java - cria os dados na memória */
+		/*
+		 * também se ele não for chamado o java irá escrever por trás porque ele é
+		 * padrão
+		 */
+	}
+
 	public Aluno(String nomePadrao) {
 		nome = nomePadrao;
 	}
+
 	public Aluno(String nomePadrao, int idadePadrao) {
 		nome = nomePadrao;
 		idade = idadePadrao;
 	}
-	
-	/*Métodos GETTERS e SETTERS do Objeto*/
-	/*Setter ele serve para receber os dados injetar os dados nos atributos
-	 * getter é pra resgatar, obter, retornar o valor do atributo
-	 * */
-	
+
+	/* Métodos GETTERS e SETTERS do Objeto */
+	/*
+	 * Setter ele serve para receber os dados injetar os dados nos atributos getter
+	 * é pra resgatar, obter, retornar o valor do atributo
+	 */
+
 	public void setNome(String nome) {
-		this.nome = nome;/*ao inves de usar o parametro e nome nomeAluno 
-		usa-se o nome this em referencia ao atributo da classe*/
+		this.nome = nome;/*
+							 * ao inves de usar o parametro e nome nomeAluno usa-se o nome this em
+							 * referencia ao atributo da classe
+							 */
 	}
+
 	public String getNome() {
-		return nome;/*retorna atributo*/
+		return nome;/* retorna atributo */
 	}
 
 	public int getIdade() {
@@ -135,49 +137,56 @@ public class Aluno {/*esta é a classe que representa aluno*/
 	public void setSerieMatriculado(String serieMatriculado) {
 		this.serieMatriculado = serieMatriculado;
 	}
-	
-	public double getMediaNota() {/*retorna média do aluno*/
+
+	public double getMediaNota() {/* retorna média do aluno */
 		
-		return (disciplina.getNota1() + disciplina.getNota2()  + disciplina.getNota3() + disciplina.getNota4()) / 4;
+		double somaNotas = 0.0;
 		
+
+		for(Disciplina disciplina : disciplinas) {
+			somaNotas += disciplina.getNota();
+		}
+        return somaNotas / disciplinas.size();//size retorna quantos objetos tem na lista.
 	}
-	
-	/*método que retorna true para aprovado false para reprovado - com reutilização de método */
+
+	/*
+	 * método que retorna true para aprovado false para reprovado - com reutilização
+	 * de método
+	 */
 	public boolean getAlunoAprovado() {
-		
+
 		double media = this.getMediaNota();
-		
-		if(media >= 70) {
+
+		if (media >= 70) {
 			return true;
-		}else {
+		} else {
 			return false;
 		}
 	}
-	/*método que retorna aprovação em String direto*/
+
+	/* método que retorna aprovação em String direto */
 	public String getAlunoAprovado2() {
 		double media = this.getMediaNota();
-		
-		if(media >= 70) {
+
+		if (media >= 70) {
 			return "O aluno está Aprovado!";
-		}else {
+		} else {
 			return "O aluno está Reprovado.";
 		}
 	}
 
-	
-	/*equals e hashcode*/
+	/* equals e hashcode */
 	@Override
 	public int hashCode() {
 		return Objects.hash(cpf, nome);
 	}
 
-	/*toString*/
+	/* toString */
 	@Override
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", rg=" + rg
 				+ ", cpf=" + cpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", dataMatricula=" + dataMatricula
-				+ ", nomeEscola=" + nomeEscola + ", serieMatriculado=" + serieMatriculado + ", disciplina=" + disciplina
-				+ "]";
+				+ ", nomeEscola=" + nomeEscola + ", serieMatriculado=" + serieMatriculado + "]";
 	}
 
 	@Override
@@ -191,8 +200,5 @@ public class Aluno {/*esta é a classe que representa aluno*/
 		Aluno other = (Aluno) obj;
 		return Objects.equals(cpf, other.cpf) && Objects.equals(nome, other.nome);
 	}
-	
-	
-	
 
 }
