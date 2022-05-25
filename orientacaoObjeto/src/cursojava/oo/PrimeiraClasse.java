@@ -1,5 +1,8 @@
 package cursojava.oo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
@@ -7,6 +10,12 @@ import cursojava.classes.Disciplina;
 
 public class PrimeiraClasse {
 	public static void main(String[] args) {
+		
+		List<Aluno> alunos = new ArrayList<Aluno>();
+		
+		for(int qtd = 1; qtd <= 2; qtd++) {
+			
+		
 		/*quando instânciado passa a existir na memória java
 		 */
 		
@@ -15,7 +24,7 @@ public class PrimeiraClasse {
 		/*é obrigatório instânciar*/
 		
 		/*aula sobre entrada de dados*/
-		String nome = JOptionPane.showInputDialog("Qual é o seu nome?");
+		String nome = JOptionPane.showInputDialog("Qual é o nome do aluno "+qtd+" ?");
 		/*String idade = JOptionPane.showInputDialog("Qual é sua idade?");
 		String dataNascimento = JOptionPane.showInputDialog("Data de nascimento?");
 		String rg = JOptionPane.showInputDialog("Registro Geral?");
@@ -60,23 +69,27 @@ public class PrimeiraClasse {
 		int continuaRemover = 0;
 		int posicao = 1;
 		
-		while(continuaRemover == 0) {
-		if(escolha == 0) {
+ 		while(continuaRemover == 0) {
+ 			if(escolha == 0) {
 			String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina que deseja remover 1, 2, 3 ou 4 ? ");
-			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() -posicao);
+			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - posicao);
 			posicao++;
 			continuaRemover = JOptionPane.showConfirmDialog(null, "Continuar a remover? ");
 			
 			
 		}
 		}
+		alunos.add(aluno1);
+		}
 		
-		System.out.println(aluno1.toString());/*descrição do objeto na memória - tostring*/
-		System.out.println("Média do aluno = " + aluno1.getMediaNota());
-		System.out.println("Resultado = " + aluno1.getAlunoAprovado2());
-		
+		for (Aluno aluno : alunos) {
+			System.out.println(aluno);/*descrição do objeto na memória*/
+			System.out.println("Média do aluno = " + aluno.getMediaNota());		
+			System.out.println("Resultado = " + aluno.getAlunoAprovado2());
+			System.out.println("----------------------------------------------------");
 			
-       
+			
+		}
 		
 	}
 
