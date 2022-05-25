@@ -16,7 +16,7 @@ public class PrimeiraClasse {
 		
 		/*aula sobre entrada de dados*/
 		String nome = JOptionPane.showInputDialog("Qual é o seu nome?");
-		String idade = JOptionPane.showInputDialog("Qual é sua idade?");
+		/*String idade = JOptionPane.showInputDialog("Qual é sua idade?");
 		String dataNascimento = JOptionPane.showInputDialog("Data de nascimento?");
 		String rg = JOptionPane.showInputDialog("Registro Geral?");
 		String cpf = JOptionPane.showInputDialog("Qual é o cpf?");
@@ -24,7 +24,7 @@ public class PrimeiraClasse {
 		String nomePai = JOptionPane.showInputDialog("Qual é o nome do pai?");
 		String matricula = JOptionPane.showInputDialog("Data de matrícula?");
 		String serie = JOptionPane.showInputDialog("Qual é a série?");
-		String escola = JOptionPane.showInputDialog("Qual é a escola?");
+		String escola = JOptionPane.showInputDialog("Qual é a escola?");*/
 	
 		
 		/*por padrão os atributos de java são privados(private) tem que colocar public lá*/
@@ -34,15 +34,15 @@ public class PrimeiraClasse {
 		Aluno aluno1 = new Aluno();/*aqui pode ser João*/
 
 		aluno1.setNome(nome);
-		aluno1.setIdade(Integer.valueOf(idade));/*convertendo string em int*/
-		aluno1.setDataNascimento(dataNascimento);
+		/*aluno1.setIdade(Integer.valueOf(idade));/*convertendo string em int*/
+		/*aluno1.setDataNascimento(dataNascimento);
 		aluno1.setRg(rg);
 		aluno1.setCpf(cpf);
 		aluno1.setNomeMae(nomeMae);
 		aluno1.setNomePai(nomePai);
 		aluno1.setDataMatricula(matricula);
 		aluno1.setSerieMatriculado(serie);
-		aluno1.setNomeEscola(escola);
+		aluno1.setNomeEscola(escola);*/
 	
 		for(int pos = 1; pos <= 4; pos++) {
 			String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina "+pos+" ?");

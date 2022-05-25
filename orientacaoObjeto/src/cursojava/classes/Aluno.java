@@ -168,11 +168,15 @@ public class Aluno {/* esta é a classe que representa aluno */
 	public String getAlunoAprovado2() {
 		double media = this.getMediaNota();
 
-		if (media >= 70) {
-			return "O aluno está Aprovado!";
-		} else {
-			return "O aluno está Reprovado.";
-		}
+		if (media >= 50) {
+			if(media >= 70) {
+				return "O aluno foi aprovado.";
+			}else {
+				return "O aluno está em recuperação.";
+			}}else {
+				return "O aluno foi reprovado.";
+			}
+			
 	}
 
 	/* equals e hashcode */
