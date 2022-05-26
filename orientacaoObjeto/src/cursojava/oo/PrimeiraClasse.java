@@ -13,9 +13,10 @@ public class PrimeiraClasse {
 		
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
+		
 		for(int qtd = 1; qtd <= 2; qtd++) {
 			
-		
+			
 		/*quando instânciado passa a existir na memória java
 		 */
 		
@@ -66,18 +67,21 @@ public class PrimeiraClasse {
 		}
 		
 		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina ?");
-		int continuaRemover = 0;
+		
+		if(escolha == 0) {/*Opção SIM é ZERO*/
+		
+			int continuarRemover = 0;
 		int posicao = 1;
 		
- 		while(continuaRemover == 0) {
- 			if(escolha == 0) {
+ 		while(continuarRemover == 0) {
+ 			
 			String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina que deseja remover 1, 2, 3 ou 4 ? ");
 			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - posicao);
 			posicao++;
-			continuaRemover = JOptionPane.showConfirmDialog(null, "Continuar a remover? ");
+			continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar a remover? ");
 			
 			
-		}
+ 			}
 		}
 		alunos.add(aluno1);
 		}
