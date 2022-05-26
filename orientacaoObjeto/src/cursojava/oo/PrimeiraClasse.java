@@ -1,6 +1,7 @@
 package cursojava.oo;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -14,7 +15,7 @@ public class PrimeiraClasse {
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
 		
-		for(int qtd = 1; qtd <= 2; qtd++) {
+		for(int qtd = 1; qtd <= 1; qtd++) {
 			
 			
 		/*quando instânciado passa a existir na memória java
@@ -85,33 +86,24 @@ public class PrimeiraClasse {
 		}
 		alunos.add(aluno1);
 		}
-		
-		for (Aluno aluno : alunos) {
+		for(int pos = 0; pos < alunos.size(); pos++) {
 			
-			if(aluno.getNome().equalsIgnoreCase("djailson")) {/*ignora os outros caso for igual a ...djailson*/
+			Aluno aluno = alunos.get(pos);
+			
+			System.out.println("Alunoo = " + aluno.getNome());
+			System.out.println("Média do aluno = " + aluno.getMediaNota());
+			System.out.println("Resultado = " + aluno.getAlunoAprovado2());
+			System.out.println("-------------------------------------------");
+			
+			for (int posd = 0; posd < aluno.getDisciplinas().size(); posd++) {
 				
-			alunos.remove(aluno);
-			break;
-			}else {
-				System.out.println(aluno);/*descrição do objeto na memória*/
-				System.out.println("Média do aluno = " + aluno.getMediaNota());		
-				System.out.println("Resultado = " + aluno.getAlunoAprovado2());
-				System.out.println("----------------------------------------------------");
+				Disciplina disc = aluno.getDisciplinas().get(posd);
+				System.out.println("Matéria = " + disc.getDisciplina() + " Nota = " + disc.getNota());
+				
 			}
 			
 		}
 		
-		for (Aluno aluno : alunos) {
-			System.out.println("Alunos que sobraram na lista");
-			System.out.println(aluno.getNome());
-			System.out.println("Suas matérias são: ");
-			
-			for(Disciplina disciplina : aluno.getDisciplinas()) {
-			System.out.println(disciplina.getDisciplina());
-			
-				
-			}
-		}
 		
 	}
 
