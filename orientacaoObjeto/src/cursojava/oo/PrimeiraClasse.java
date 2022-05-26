@@ -87,11 +87,14 @@ public class PrimeiraClasse {
 		}
 		
 		for (Aluno aluno : alunos) {
+			
+			if(aluno.getNome().equalsIgnoreCase("djailson")) {/*ignora os outros caso for igual a ...djailson*/
 			System.out.println(aluno);/*descrição do objeto na memória*/
 			System.out.println("Média do aluno = " + aluno.getMediaNota());		
 			System.out.println("Resultado = " + aluno.getAlunoAprovado2());
 			System.out.println("----------------------------------------------------");
-			
+			break;
+			}
 			
 		}
 		
