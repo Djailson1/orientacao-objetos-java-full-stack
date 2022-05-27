@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import cursojava.constantes.StatusAluno;
+
 public class Aluno {/* esta é a classe que representa aluno */
 	/* Caracteristicas gerais - atributos e tipos */
 
@@ -170,11 +172,11 @@ public class Aluno {/* esta é a classe que representa aluno */
 
 		if (media >= 50) {
 			if(media >= 70) {
-				return "O aluno foi aprovado.";
+				return StatusAluno.APROVADO;
 			}else {
-				return "O aluno está em recuperação.";
+				return StatusAluno.RECUPERACAO;
 			}}else {
-				return "O aluno foi reprovado.";
+				return StatusAluno.REPROVADO;
 			}
 			
 	}
