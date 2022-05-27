@@ -105,7 +105,7 @@ public class PrimeiraClasse {
 				
 			}
 			
-			System.out.println("Alunoo = " + aluno.getNome());
+			System.out.println("Aluno = " + aluno.getNome());
 			System.out.println("Média do aluno = " + aluno.getMediaNota());
 			System.out.println("Resultado = " + aluno.getAlunoAprovado2());
 			System.out.println("-------------------------------------------");
