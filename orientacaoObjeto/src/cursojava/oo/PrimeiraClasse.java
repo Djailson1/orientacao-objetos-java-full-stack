@@ -15,7 +15,7 @@ public class PrimeiraClasse {
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
 		
-		for(int qtd = 1; qtd <= 1; qtd++) {
+		for(int qtd = 1; qtd <= 2; qtd++) {
 			
 			
 		/*quando instânciado passa a existir na memória java
@@ -55,7 +55,7 @@ public class PrimeiraClasse {
 		aluno1.setSerieMatriculado(serie);
 		aluno1.setNomeEscola(escola);*/
 	
-		for(int pos = 1; pos <= 4; pos++) {
+		for(int pos = 1; pos <= 1; pos++) {
 			String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina "+pos+" ?");
 			String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina "+pos+" ?");
 			
@@ -87,8 +87,23 @@ public class PrimeiraClasse {
 		alunos.add(aluno1);
 		}
 		for(int pos = 0; pos < alunos.size(); pos++) {
-			
+			/*trocando aluno*/
 			Aluno aluno = alunos.get(pos);
+			
+			if(aluno.getNome().equalsIgnoreCase("alex")) {
+				Aluno trocar = new Aluno();
+				trocar.setNome("Aluno foi trocado");
+				
+				Disciplina disciplina = new Disciplina();
+				disciplina.setDisciplina("matemática");
+				disciplina.setNota(96);
+				
+				trocar.getDisciplinas().add(disciplina);
+				
+				alunos.set(pos, trocar);
+				aluno = alunos.get(pos);
+				
+			}
 			
 			System.out.println("Alunoo = " + aluno.getNome());
 			System.out.println("Média do aluno = " + aluno.getMediaNota());
