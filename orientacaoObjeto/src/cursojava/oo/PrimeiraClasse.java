@@ -13,7 +13,7 @@ import cursojava.constantes.StatusAluno;
 
 public class PrimeiraClasse {
 	public static void main(String[] args) {
-		
+		/*permissão de acesso*/
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
