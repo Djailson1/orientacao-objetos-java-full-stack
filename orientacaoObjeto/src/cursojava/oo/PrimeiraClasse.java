@@ -14,6 +14,11 @@ import cursojava.constantes.StatusAluno;
 public class PrimeiraClasse {
 	public static void main(String[] args) {
 		
+		String login = JOptionPane.showInputDialog("Informe o login");
+		String senha = JOptionPane.showInputDialog("Informe a senha");
+		
+		if(login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin")) {
+		
 		/*hashmap é uma forma de carregar dados e recuperar eles atraves de um valor*/
 		
 		List<Aluno> alunos = new ArrayList<Aluno>();
@@ -133,6 +138,8 @@ public class PrimeiraClasse {
 			System.out.println("Nome do aluno = " + aluno.getNome() + " Resultado = " + aluno.getAlunoAprovado2() + " com média de = " + aluno.getMediaNota());
 			
 		}
+		
+	}
 		
 	}
 
