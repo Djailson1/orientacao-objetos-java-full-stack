@@ -199,5 +199,15 @@ public class Aluno extends Pessoa {/* esta é a classe que representa aluno */
 		Aluno other = (Aluno) obj;
 		return Objects.equals(cpf, other.cpf) && Objects.equals(nome, other.nome);
 	}
+	
+	
+	public boolean pessoaMaiorIdade() {
+		
+		return idade >= 21;
+	}/*overrride significa que esta sobreescrevndo o metodo*/
+	
+	public String msgMaiorIdade() {
+		return this.pessoaMaiorIdade() ? "Obaa aluna é maior de idade" : "Ixi você é menor de idade";
+	}
 
 }
