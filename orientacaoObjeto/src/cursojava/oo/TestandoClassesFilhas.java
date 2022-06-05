@@ -2,6 +2,7 @@ package cursojava.oo;
 
 import cursojava.classes.Aluno;
 import cursojava.classes.Diretor;
+import cursojava.classes.Pessoa;
 import cursojava.classes.Secretario;
 
 public class TestandoClassesFilhas {
@@ -31,7 +32,7 @@ public class TestandoClassesFilhas {
 		System.out.println(secretario.pessoaMaiorIdade());
 		
 		
-		
+		Pessoa pessoa = new Pessoa();
 	}
 
 }
