@@ -31,6 +31,11 @@ public class Diretor extends Pessoa {
 				+ titulacao + ", nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", rg="
 				+ rg + ", cpf=" + cpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + "]";
 	}
+	@Override
+	public double salario() {
+		// TODO Auto-generated method stub
+		return 3900.78;
+	}
 	
 	
 	

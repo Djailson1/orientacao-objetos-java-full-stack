@@ -32,7 +32,9 @@ public class TestandoClassesFilhas {
 		System.out.println(secretario.pessoaMaiorIdade());
 		
 		
-		Pessoa pessoa = new Pessoa();
+		System.out.println("Salário =" + aluno.salario());
+		System.out.println("Salário =" + diretor.salario());
+		System.out.println("Salário =" + secretario.salario());
 	}
 
 }
