@@ -22,6 +22,7 @@ public class TestandoClassesFilhas {
 		secretario.setExperiencia("Roubos");
 		secretario.setCpf("86476387");
 		secretario.setIdade(18);
+		secretario.setNome("Aristosteles");
 		
 		System.out.println(aluno);
 		System.out.println(diretor);
@@ -32,9 +33,17 @@ public class TestandoClassesFilhas {
 		System.out.println(secretario.pessoaMaiorIdade());
 		
 		
-		System.out.println("Salário =" + aluno.salario());
-		System.out.println("Salário =" + diretor.salario());
-		System.out.println("Salário =" + secretario.salario());
+		System.out.println("Salário = " + aluno.salario());
+		System.out.println("Salário = " + diretor.salario());
+		System.out.println("Salário = " + secretario.salario());
+		
+		teste(aluno);
+		teste(diretor);
+		teste(secretario);
+		
 	}
-
+		public static void teste(Pessoa pessoa) {
+			System.out.println("Essa pessoa é demais = " + pessoa.getNome() +
+					" e o salário é de " + pessoa.salario());
+		}
 }
