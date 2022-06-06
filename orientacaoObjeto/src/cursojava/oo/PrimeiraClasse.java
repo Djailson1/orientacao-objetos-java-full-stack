@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
+import cursojava.classes.Secretario;
 import cursojava.constantes.StatusAluno;
 
 public class PrimeiraClasse {
@@ -16,7 +17,11 @@ public class PrimeiraClasse {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
-		if(login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin")) {
+		Secretario secretario = new Secretario();/*diretamente com o objeto*/
+		secretario.setLogin(login);
+		secretario.setSenha(senha);
+		
+		if(secretario.autenticar()) {/*se true acessa do contrario não*/
 		
 		/*hashmap é uma forma de carregar dados e recuperar eles atraves de um valor*/
 		
@@ -138,6 +143,8 @@ public class PrimeiraClasse {
 			
 		}
 		
+	}else {
+		JOptionPane.showMessageDialog(null, "Acesso não permitido");
 	}
 		
 	}
