@@ -7,8 +7,10 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
+import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
+import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
 import cursojava.interfaces.PermitirAcesso;
 
@@ -18,10 +20,10 @@ public class PrimeiraClasse {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
-		PermitirAcesso permitirAcesso = new Secretario(login, senha);
 		
 		
-		if(permitirAcesso.autenticar()) {/*se true acessa do contrario não*/
+		
+		if(new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) {/*travando o contrato para autorizar somente quem realmente tem o contrato 100% legítimo*/
 		
 		/*hashmap é uma forma de carregar dados e recuperar eles atraves de um valor*/
 		
