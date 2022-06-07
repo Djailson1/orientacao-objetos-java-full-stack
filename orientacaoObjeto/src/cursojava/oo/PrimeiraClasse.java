@@ -10,6 +10,7 @@ import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
 import cursojava.constantes.StatusAluno;
+import cursojava.interfaces.PermitirAcesso;
 
 public class PrimeiraClasse {
 	public static void main(String[] args) {
@@ -17,11 +18,10 @@ public class PrimeiraClasse {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
-		Secretario secretario = new Secretario();/*diretamente com o objeto*/
-		secretario.setLogin(login);
-		secretario.setSenha(senha);
+		PermitirAcesso secretario = new Secretario();/*diretamente com o objeto*/
 		
-		if(secretario.autenticar()) {/*se true acessa do contrario não*/
+		
+		if(new Secretario().autenticar(login, senha)) {/*se true acessa do contrario não*/
 		
 		/*hashmap é uma forma de carregar dados e recuperar eles atraves de um valor*/
 		
