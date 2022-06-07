@@ -18,10 +18,10 @@ public class PrimeiraClasse {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
-		PermitirAcesso secretario = new Secretario();/*diretamente com o objeto*/
+		PermitirAcesso permitirAcesso = new Secretario(login, senha);
 		
 		
-		if(new Secretario().autenticar(login, senha)) {/*se true acessa do contrario não*/
+		if(permitirAcesso.autenticar()) {/*se true acessa do contrario não*/
 		
 		/*hashmap é uma forma de carregar dados e recuperar eles atraves de um valor*/
 		
