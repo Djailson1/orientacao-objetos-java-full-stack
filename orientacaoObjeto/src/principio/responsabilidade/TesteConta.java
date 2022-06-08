@@ -27,7 +27,9 @@ public class TesteConta {
 		
 		System.out.println(bancaria);
 		
+		bancaria.soma100Reais();
 		
+		System.out.println(bancaria);
 		
 		
 
