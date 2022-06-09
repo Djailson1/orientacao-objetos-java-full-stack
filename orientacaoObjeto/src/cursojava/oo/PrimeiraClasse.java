@@ -16,6 +16,10 @@ import cursojava.interfaces.PermitirAcesso;
 
 public class PrimeiraClasse {
 	public static void main(String[] args) {
+		
+		try {
+			
+		
 		/*permissão de acesso*/
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
@@ -148,7 +152,11 @@ public class PrimeiraClasse {
 	}else {
 		JOptionPane.showMessageDialog(null, "Acesso não permitido");
 	}
+		/*aqui*/
+	}catch (Exception e) {
+		e.printStackTrace();/*imprime erro no console java*/
+		JOptionPane.showMessageDialog(null, "Erro ao processar notas");
+	}
 		
 	}
-
 }
