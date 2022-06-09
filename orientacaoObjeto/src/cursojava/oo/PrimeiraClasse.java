@@ -167,6 +167,7 @@ public class PrimeiraClasse {
 			saida.append("\n Classe de erro: " + e.getStackTrace()[i].getClassName());
 			saida.append("\n Método de erro: " + e.getStackTrace()[i].getMethodName());
 			saida.append("\n Linha de erro: " + e.getStackTrace()[i].getLineNumber());
+			saida.append("\n Class: " + e.getClass().getName());
 		}
 		
 		
