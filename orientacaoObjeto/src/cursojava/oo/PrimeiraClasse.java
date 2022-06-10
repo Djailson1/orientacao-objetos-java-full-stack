@@ -1,8 +1,10 @@
 package cursojava.oo;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
@@ -19,6 +21,9 @@ public class PrimeiraClasse {
 		
 		try {
 			
+		File fil = new File("c://lines.txt");
+		Scanner scan = new Scanner(fil);
+		
 		
 		/*permissão de acesso*/
 		String login = JOptionPane.showInputDialog("Informe o login");
@@ -53,7 +58,7 @@ public class PrimeiraClasse {
 		
 		/*aula sobre entrada de dados*/
 		String nome = JOptionPane.showInputDialog("Qual é o nome do aluno "+qtd+" ?");
-		/*String idade = JOptionPane.showInputDialog("Qual é sua idade?");
+		String idade = JOptionPane.showInputDialog("Qual é sua idade?");
 		String dataNascimento = JOptionPane.showInputDialog("Data de nascimento?");
 		String rg = JOptionPane.showInputDialog("Registro Geral?");
 		String cpf = JOptionPane.showInputDialog("Qual é o cpf?");
@@ -61,7 +66,7 @@ public class PrimeiraClasse {
 		String nomePai = JOptionPane.showInputDialog("Qual é o nome do pai?");
 		String matricula = JOptionPane.showInputDialog("Data de matrícula?");
 		String serie = JOptionPane.showInputDialog("Qual é a série?");
-		String escola = JOptionPane.showInputDialog("Qual é a escola?");*/
+		String escola = JOptionPane.showInputDialog("Qual é a escola?");
 	
 		
 		/*por padrão os atributos de java são privados(private) tem que colocar public lá*/
@@ -71,7 +76,8 @@ public class PrimeiraClasse {
 		Aluno aluno1 = new Aluno();/*aqui pode ser João*/
 
 		aluno1.setNome(nome);
-		/*aluno1.setIdade(Integer.valueOf(idade));/*convertendo string em int*/
+		aluno1.setIdade(Integer.valueOf(idade));/*convertendo string em int*/
+		
 		/*aluno1.setDataNascimento(dataNascimento);
 		aluno1.setRg(rg);
 		aluno1.setCpf(cpf);
@@ -153,7 +159,7 @@ public class PrimeiraClasse {
 		JOptionPane.showMessageDialog(null, "Acesso não permitido");
 	}
 		/*aqui*/
-	}catch (Exception e) {
+	}catch (NumberFormatException e) {
 		
 		StringBuilder saida = new StringBuilder();
 		
@@ -171,7 +177,14 @@ public class PrimeiraClasse {
 		}
 		
 		
-		JOptionPane.showMessageDialog(null, "Erro ao processar notas " + saida.toString());
+		JOptionPane.showMessageDialog(null, "Erro de conversão de número " + saida.toString());
+	}catch (NullPointerException e) {
+		
+		JOptionPane.showConfirmDialog(null,"Null Pointer Exception " + e.getClass());
+		
+	}catch (Exception e) {
+		e.printStackTrace();
+		JOptionPane.showMessageDialog(null,"Erro inesperado: " + e.getClass().getName());
 	}
 		
 	}
