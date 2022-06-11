@@ -22,13 +22,8 @@ public class PrimeiraClasse {
 	public static void main(String[] args) {
 		
 		try {
-		
-		try {
-		File fil = new File("c://lines.txt");
-		Scanner scan = new Scanner(fil);
-		}catch (FileNotFoundException e) {
-			throw new ExcecaoProcessarNota(e.getMessage());
-		}/*esse throw é pra ele lançar a exceção personalizada*/
+	
+		lerArquivo();
 		
 		/*permissão de acesso*/
 		String login = JOptionPane.showInputDialog("Informe o login");
@@ -187,13 +182,22 @@ public class PrimeiraClasse {
 		
 		JOptionPane.showConfirmDialog(null,"Null Pointer Exception " + e.getClass());
 		
-	}catch (Exception e) {
+	}catch (ExcecaoProcessarNota e) {
 		e.printStackTrace();
-		JOptionPane.showMessageDialog(null,"Erro inesperado: " + e.getClass().getName());
+		JOptionPane.showMessageDialog(null,"Erro da exceção customizada: " + e.getClass().getName());
 	}finally {/*sempre é executado ocorrendo erros ou não porque*/
 		/*finally sempre é é usado quando precisa executar um processo acontecendo erro ou não no sistema.*/
 		JOptionPane.showMessageDialog(null,"Obrigado por aprender java comigo!");
 	}
 		
+	}
+	
+	public static void lerArquivo() throws ExcecaoProcessarNota{
+		try {
+		File fil = new File("c://lines.txt");
+		Scanner scan = new Scanner(fil);
+		}catch (FileNotFoundException e) {
+		throw new ExcecaoProcessarNota(e.getMessage());
+		}
 	}
 }
