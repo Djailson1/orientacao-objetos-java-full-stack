@@ -27,7 +27,7 @@ public class PrimeiraClasse {
 		File fil = new File("c://lines.txt");
 		Scanner scan = new Scanner(fil);
 		}catch (FileNotFoundException e) {
-			throw new ExcecaoProcessarNota("Vijiii um erro no processamento do arquivo ao processar as notas do aluno");
+			throw new ExcecaoProcessarNota(e.getMessage());
 		}/*esse throw é pra ele lançar a exceção personalizada*/
 		
 		/*permissão de acesso*/
