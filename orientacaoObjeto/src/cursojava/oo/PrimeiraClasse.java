@@ -1,6 +1,7 @@
 package cursojava.oo;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
+import curso.java.excecao.ExcecaoProcessarNota;
 import cursojava.classes.Aluno;
 import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
@@ -20,10 +22,13 @@ public class PrimeiraClasse {
 	public static void main(String[] args) {
 		
 		try {
-			
-		/*File fil = new File("c://lines.txt");
-		Scanner scan = new Scanner(fil);*/
 		
+		try {
+		File fil = new File("c://lines.txt");
+		Scanner scan = new Scanner(fil);
+		}catch (FileNotFoundException e) {
+			throw new ExcecaoProcessarNota("Vijiii um erro no processamento do arquivo ao processar as notas do aluno");
+		}/*esse throw é pra ele lançar a exceção personalizada*/
 		
 		/*permissão de acesso*/
 		String login = JOptionPane.showInputDialog("Informe o login");
