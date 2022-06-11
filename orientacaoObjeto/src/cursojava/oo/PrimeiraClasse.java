@@ -21,8 +21,8 @@ public class PrimeiraClasse {
 		
 		try {
 			
-		File fil = new File("c://lines.txt");
-		Scanner scan = new Scanner(fil);
+		/*File fil = new File("c://lines.txt");
+		Scanner scan = new Scanner(fil);*/
 		
 		
 		/*permissão de acesso*/
@@ -185,6 +185,9 @@ public class PrimeiraClasse {
 	}catch (Exception e) {
 		e.printStackTrace();
 		JOptionPane.showMessageDialog(null,"Erro inesperado: " + e.getClass().getName());
+	}finally {/*sempre é executado ocorrendo erros ou não porque*/
+		/*finally sempre é é usado quando precisa executar um processo acontecendo erro ou não no sistema.*/
+		JOptionPane.showMessageDialog(null,"Obrigado por aprender java comigo!");
 	}
 		
 	}
