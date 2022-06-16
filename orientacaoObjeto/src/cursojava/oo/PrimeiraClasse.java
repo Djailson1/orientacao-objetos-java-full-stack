@@ -159,10 +159,9 @@ public class PrimeiraClasse {
 		JOptionPane.showMessageDialog(null, "Acesso não permitido");
 	}
 		/*aqui*/
-	}catch (NumberFormatException e) {
+	}catch (Exception e) {
 		
 		StringBuilder saida = new StringBuilder();
-		
 		e.printStackTrace();/*imprime erro no console java*/
 		
 		/*mensagem do erro ou causa*/
@@ -178,13 +177,7 @@ public class PrimeiraClasse {
 		
 		
 		JOptionPane.showMessageDialog(null, "Erro de conversão de número " + saida.toString());
-	}catch (NullPointerException e) {
-		
-		JOptionPane.showConfirmDialog(null,"Null Pointer Exception " + e.getClass());
-		
-	}catch (FileNotFoundException e) {
-		e.printStackTrace();
-		JOptionPane.showMessageDialog(null,"Erro da exceção customizada: " + e.getClass().getName());
+	
 	}finally {/*sempre é executado ocorrendo erros ou não porque*/
 		/*finally sempre é é usado quando precisa executar um processo acontecendo erro ou não no sistema.*/
 		JOptionPane.showMessageDialog(null,"Obrigado por aprender java comigo!");
