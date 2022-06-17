@@ -59,14 +59,14 @@ public class PrimeiraClasse {
 		/*aula sobre entrada de dados*/
 		String nome = JOptionPane.showInputDialog("Qual é o nome do aluno "+qtd+" ?");
 		String idade = JOptionPane.showInputDialog("Qual é sua idade?");
-		String dataNascimento = JOptionPane.showInputDialog("Data de nascimento?");
+		/*String dataNascimento = JOptionPane.showInputDialog("Data de nascimento?");
 		String rg = JOptionPane.showInputDialog("Registro Geral?");
 		String cpf = JOptionPane.showInputDialog("Qual é o cpf?");
 		String nomeMae = JOptionPane.showInputDialog("Qual é o nome da mãe?");
 		String nomePai = JOptionPane.showInputDialog("Qual é o nome do pai?");
 		String matricula = JOptionPane.showInputDialog("Data de matrícula?");
 		String serie = JOptionPane.showInputDialog("Qual é a série?");
-		String escola = JOptionPane.showInputDialog("Qual é a escola?");
+		String escola = JOptionPane.showInputDialog("Qual é a escola?");*/
 	
 		
 		/*por padrão os atributos de java são privados(private) tem que colocar public lá*/
