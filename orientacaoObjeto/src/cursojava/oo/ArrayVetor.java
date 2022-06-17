@@ -1,20 +1,26 @@
 package cursojava.oo;
 
+import javax.swing.JOptionPane;
+
 public class ArrayVetor {
 	public static void main(String[] args) {
 		
 		/*array pode ser de todos tipos de dados e objetos também*/
 		
+		String posicoes = JOptionPane.showInputDialog("Quantas posições o array deve ter?");
+		
+		
 		/*array sempre deve ter quant. de posições definidas*/
-		double[] notas = new double[5];
+		double[] notas = new double[Integer.parseInt(posicoes)];
 		
-		/*atribuir valor as posições do array*/
-		notas[0] = 9.0;
-		notas[1] = 7.0;
-		notas[2] = 8.0;
-		notas[3] = 6.0;
+		for(int pos = 0; pos < notas.length; pos++) {
+			String valor = JOptionPane.showInputDialog("Qual o valor da posição = " + pos);
+			notas[pos] = Double.valueOf(valor);
+					
+		}
 		
-		for(int pos = 0; pos < 5; pos++ ) {
+		
+		for(int pos = 0; pos < notas.length; pos++ ) {
 			
 			System.out.println("Nota = " + (pos + 1) + " é = " + notas[pos]);
 			
