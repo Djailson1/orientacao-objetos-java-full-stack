@@ -5,6 +5,9 @@ import javax.swing.JOptionPane;
 public class ArrayVetor {
 	public static void main(String[] args) {
 		
+		
+		double[] valores = {9.7, 8.7, 7.9, };
+		
 		/*array pode ser de todos tipos de dados e objetos também*/
 		
 		String posicoes = JOptionPane.showInputDialog("Quantas posições o array deve ter?");
