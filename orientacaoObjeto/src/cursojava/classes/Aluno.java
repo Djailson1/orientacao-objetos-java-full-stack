@@ -139,7 +139,7 @@ public class Aluno extends Pessoa {/* esta é a classe que representa aluno */
 		
 
 		for(Disciplina disciplina : disciplinas) {
-			somaNotas += disciplina.getNota();
+			somaNotas += disciplina.getMediaNotas();
 		}
         return somaNotas / disciplinas.size();//size retorna quantos objetos tem na lista.
 	}
