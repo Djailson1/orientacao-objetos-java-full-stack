@@ -1,5 +1,7 @@
 package cursojava.oo;
 
+import java.util.Iterator;
+
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
@@ -30,29 +32,44 @@ public class ArrayVetor {
 		
 		aluno.getDisciplinas().add(disciplina2);
 		
-		System.out.println("Nome do aluno = " + aluno.getNome() + " Inscrito no curso : " + aluno.getNomeEscola());
-		System.out.println(" --------- Discilinas do aluno ---------");
+		/*criação do aluno*/
+		Aluno aluno2 = new Aluno();
+		aluno2.setNome("Djailson");
+		aluno2.setNomeEscola("Jdev treinamento");
 		
-		for (Disciplina d : aluno.getDisciplinas()) {
+		/*criação da disciplina*/
+		Disciplina disciplina3 = new Disciplina();
+		disciplina3.setDisciplina("Curso de Java");
+		disciplina3.setNota(notas);
+		
+		
+		aluno.getDisciplinas().add(disciplina3);
+		
+		Disciplina disciplina4 = new Disciplina();
+		disciplina4.setDisciplina("Log programação");
+		disciplina4.setNota(notasLogica);
+		
+		aluno.getDisciplinas().add(disciplina4);
+		
+		/*--------------------------------------------------------------------*/
+		
+		Aluno[] arrayAlunos = new Aluno[2];
+		
+		arrayAlunos[0] = aluno;
+		arrayAlunos[1] = aluno2;
+		
+		for(int pos = 0; pos < arrayAlunos.length; pos++) {
 			
-			System.out.println("Discilina : " + d.getDisciplina());
-			System.out.println("As notas da disciplina são : " );
-			
-			double notaMin = 0.0;
-			for(int pos = 0; pos < d.getNota().length; pos++) {
-			
-				System.out.println("Nota " + pos + " é igual = " + d.getNota()[pos]);
-				if(pos == 0) {
-					notaMin = d.getNota()[pos];
-				}else {
-					if(d.getNota()[pos] < notaMin) {
-						notaMin = d.getNota()[pos];
-						
-					}
+			System.out.println("Nome do aluno: " + arrayAlunos[pos].getNome());
+			for (Disciplina d :arrayAlunos[pos].getDisciplinas()) {
+				System.out.println("Nome da disciplina é : " + d.getDisciplina());
+				
+				for(int posnota = 0; posnota < d.getNota().length; posnota++) {
+					System.out.println("A nota número: " + posnota + " é igual " + d.getNota()[posnota]);
+					
 				}
+				
 			}
-			System.out.println("A menor nota da Disciplina = " + d.getDisciplina() + " é de valor " + notaMin);
-			
 		}
 		
 	}
