@@ -35,6 +35,9 @@ public class TelaTimeThread extends JDialog{
 			while(true) {/*fica sempre rodando*/
 				mostraTempo.setText(new SimpleDateFormat("dd/MM/yyyy hh:mm.ss").
 						format(Calendar.getInstance().getTime()));
+
+				mostraTempo2.setText(new SimpleDateFormat("dd/MM/yyyy hh:mm.ss").
+						format(Calendar.getInstance().getTime()));
 				try {
 					Thread.sleep(1000);
 				} catch (InterruptedException e) {
