@@ -15,9 +15,13 @@ public class ImplementacaoFilaThread extends Thread {
 	
 	@Override
 	public void run() {
-		Iterator iteracao = pilha_fila.iterator();
 		
-		synchronized (iteracao) {/*bloquear o acesso a essa lista por outros processos*/
+		System.out.println("fila rodando");
+		
+		while(true) {
+		
+		Iterator iteracao = pilha_fila.iterator();
+		synchronized (pilha_fila) {/*bloquear o acesso a essa lista por outros processos*/
 			
 			while(iteracao.hasNext()) {/*enquanto conter dados na lista irá processar*/
 				ObjetoFilaThread processar = (ObjetoFilaThread) iteracao.next();/*pega o objeto atual*/
@@ -25,28 +29,31 @@ public class ImplementacaoFilaThread extends Thread {
 				/*processar 10 mil notas ficais*/
 				/*gerar uma lista enorme de PDF*/
 				/*gerar um envio em massa de e-mail*/
+				
+				System.out.println("-------------------------");
 				System.out.println(processar.getEmail());
 				System.out.println(processar.getNome());
 
-				System.out.println("-------------------------");
+				
 				
 				iteracao.remove();
 				
 				try {
-					Thread.sleep(100);/*dar um tempo de descarga de memória*/
+					Thread.sleep(1000);/*dar um tempo de descarga de memória*/
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
 			
 		}
-		
-		
 		try {
 			Thread.sleep(1000);/*processou toda a lista dar um tempo para limpeza de memória*/
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		
+		}
+		
 	}
 
 }
